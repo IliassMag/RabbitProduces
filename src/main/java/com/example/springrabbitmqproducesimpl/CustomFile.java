@@ -12,5 +12,6 @@ import java.io.File;
 @AllArgsConstructor
 @ToString
 public class CustomFile {
-    byte[] bytesFromFile;
+    private byte[] bytesFromFile;
+    private File file;
 }

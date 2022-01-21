@@ -17,9 +17,9 @@ public class MessagePublisher {
 
     @PostMapping("/sendFile")
     public String sendFile() throws IOException {
-        File file = new File("C:\\CanevasSource.xlsx");
+        File file = new File("C:\\Financial_Data_Source.xlsx");
         byte[] bytesFromFile = Files.readAllBytes(file.toPath());
-        CustomFile customFile = new CustomFile(bytesFromFile);
+        CustomFile customFile = new CustomFile(bytesFromFile, file);
         template.convertAndSend(
                 MQConfig.EXCHANGE_EXCEL,
                 MQConfig.ROUTING_KEY_EXCEL,
